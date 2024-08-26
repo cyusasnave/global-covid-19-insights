@@ -8,7 +8,7 @@ const NavBar = () => {
       <Link to={"/"}>
         <div className="flex items-center gap-4">
           <img src={logo} alt="covid-logo" className="w-16 object-cover" />
-          <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-200">
+          <h2 className="mb-4 hidden md:block text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-200">
             Global COVID-19 Insights
           </h2>
         </div>
