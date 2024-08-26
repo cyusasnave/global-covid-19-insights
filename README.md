@@ -1,50 +1,44 @@
-# React + TypeScript + Vite
+# Global COVID-19 Insights
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+This project provides up-to-date COVID-19 statistics and trends from around the world, allowing users to track and compare data across different countries. The application is built with React, TypeScript, and Vite, ensuring a modern and efficient development experience.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technologies Used
 
-## Expanding the ESLint configuration
+- **React**: A JavaScript library for building user interfaces.
+- **TypeScript**: A superset of JavaScript that adds static types.
+- **Vite**: A build tool that provides a fast development environment with Hot Module Replacement (HMR).
+- **Tailwind CSS**: A utility-first CSS framework for creating custom designs with ease.
+- **Axios**: A promise-based HTTP client for making API requests.
+- **React Query**: A library for managing server-state and caching data in React applications.
+- **React Router DOM**: A library for handling routing in React applications.
+- **ESLint**: A tool for identifying and fixing problems in JavaScript and TypeScript code.
+- **Prettier**: A code formatter that ensures consistent style across the codebase (Used with ESLint).
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Setup
 
-- Configure the top-level `parserOptions` property like this:
+To get started with the project, follow these steps:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+1. **Clone the repository:**
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+   ```bash
+   git clone https://github.com/yourusername/global-covid19-insights.git
+   cd global-covid19-insights
+   ```
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+2. **Install dependencies:**
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+   ```bash
+   npm install
+   ```
+
+3. **Run the development server:**
+
+   ```bash
+   npm run dev
+   ```
+
+## Contact
+
+If you have any questions or suggestions, feel free to reach out to me at cyusasnaveee@gmail.com.
