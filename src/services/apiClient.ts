@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios, { AxiosRequestConfig } from "axios";
 
 interface FetchResponse<T> {
   get: string;
@@ -18,6 +18,8 @@ class APIClient<T> {
   constructor(public endpoint: string) {}
   getAll = () =>
     axiosInstance.get<FetchResponse<T>>(this.endpoint).then((res) => res.data);
+  getHistory = (config: AxiosRequestConfig) =>
+    axiosInstance.get<FetchResponse<T>>(this.endpoint, config).then((res) => res.data);
 }
 
 export default APIClient;

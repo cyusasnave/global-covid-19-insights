@@ -21,11 +21,11 @@ const Footer = () => {
           <p className="text-white my-5 ml-4">
             Click on any country to see Covid-19 details in that country
           </p>
-          <ul className="grid grid-cols-6 items-center mb-6 text-sm font-medium sm:mb-0 text-gray-400">
+          <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 items-center mb-6 text-sm font-medium sm:mb-0 text-gray-400">
             {data?.response.map((country) => (
               <li key={country}>
                 <Link
-                  to="/statistics"
+                  to={`/statistics/${country}`}
                   className="hover:underline me-4 md:me-6 capitalize flex items-center gap-3 my-1"
                 >
                   <IoIosArrowForward />
