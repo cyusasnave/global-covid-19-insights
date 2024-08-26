@@ -10,10 +10,10 @@ interface FetchResponse<T> {
 }
 
 const axiosInstance = axios.create({
-  baseURL: "https://covid-193.p.rapidapi.com",
+  baseURL: import.meta.env.VITE_API_BASE_URL,
   headers: {
-    "x-rapidapi-host": "covid-193.p.rapidapi.com",
-    "x-rapidapi-key": "4773175883msh72e97df8960f042p13ad78jsn83a2fcb3f232",
+    "x-rapidapi-host": import.meta.env.VITE_API_BASE_HOST,
+    "x-rapidapi-key": import.meta.env.VITE_API_KEY,
   },
 });
 
