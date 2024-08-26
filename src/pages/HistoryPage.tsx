@@ -2,14 +2,23 @@ import { IoArrowBack } from "react-icons/io5";
 import { Link, useParams } from "react-router-dom";
 import useCountryHistory from "../hooks/useCountryHistory";
 import HistoryPageSkeleton from "../components/HistoryPageSkeleton";
+import { useEffect } from "react";
 
 const HistoryPage = () => {
   const { country } = useParams();
   const { data, isLoading, error } = useCountryHistory(country!);
 
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, [country]);
+
   if (isLoading) return <HistoryPageSkeleton />;
 
-  if (error) throw new Error(error.message);
+  if (error || (data?.errors && Object.keys(data?.errors).length > 0))
+    throw new Error(error?.message || "data error");
 
   const details = data?.response[0];
 
@@ -19,7 +28,7 @@ const HistoryPage = () => {
         <Link to={"/statistics"}>
           <button
             type="button"
-            className="text-white flex items-center justify-center gap-2 mt-5 bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-primary-900"
+            className="text-white flex items-center justify-center gap-2 mt-5 bg-primary-600 hover:bg-primary-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
           >
             <IoArrowBack />
             Back

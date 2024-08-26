@@ -3,6 +3,7 @@ import Layout from "./pages/Layout";
 import HomePage from "./pages/HomePage";
 import ErrorPage from "./pages/ErrorPage";
 import HistoryPage from "./pages/HistoryPage";
+import StatisticsPage from "./pages/StatisticsPage";
 
 const router = createBrowserRouter([
   {
@@ -11,6 +12,7 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       { index: true, element: <HomePage /> },
+      { path: "/statistics", element: <StatisticsPage /> },
       { path: "statistics/:country", element: <HistoryPage /> },
     ],
   },

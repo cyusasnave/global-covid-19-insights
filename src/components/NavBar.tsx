@@ -8,9 +8,9 @@ const NavBar = () => {
       <Link to={"/"}>
         <div className="flex items-center gap-4">
           <img src={logo} alt="covid-logo" className="w-16 object-cover" />
-          <h3 className="text-white text-3xl uppercase font-bold tracking-wide hidden md:block">
-            Covid-19
-          </h3>
+          <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-200">
+            Global COVID-19 Insights
+          </h2>
         </div>
       </Link>
       <SearchCountries />

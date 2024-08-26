@@ -1,17 +1,17 @@
 import { FormEvent, useRef } from "react";
 import { FaSearch } from "react-icons/fa";
 import useCountries from "../hooks/useCountries";
-import useAppQueryStore from "../store";
+import { useNavigate } from "react-router-dom";
 
 const SearchCountries = () => {
   const ref = useRef<HTMLSelectElement>(null);
   const { data } = useCountries();
-  const setCountryName = useAppQueryStore((s) => s.setCountryName);
+  const navigate = useNavigate();
 
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
     if (ref.current && ref.current.value) {
-      setCountryName(ref.current.value);
+      navigate(`/statistics/${ref.current.value}`);
       ref.current.value = "";
     }
   };
